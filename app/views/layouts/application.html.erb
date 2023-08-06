@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>GoodRecipes</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Recipe App</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><%= link_to "Home", root_path %></li>
+      <%# if user_signed_in? %>
+        <li><%= link_to "新規投稿", new_recipe_path %></li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+      <%# else %>
+        <li><%#= link_to "ログイン", new_user_session_path %></li>
+        <li><%#= link_to "新規登録", new_user_registration_path %></li>
+      <%# end %>
+    </ul>
+  </nav>
+  <%= yield %>
+</body>
 </html>
