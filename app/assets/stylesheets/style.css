@@ -1057,3 +1057,10 @@ footer p {
 .search-form .search-btn {
   width: 10%;
 }
+
+.recipe_form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

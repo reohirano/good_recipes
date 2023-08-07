@@ -1,10 +1,5 @@
-<h1>レシピ一覧</h1>
-<ul>
+<div class="contents row">
   <% @recipes.each do |recipe| %>
-    <li>
-      <h2><%= link_to recipe.title, recipe_path(recipe) %></h2>
-      <p><%= truncate(recipe.content, length: 100) %></p>
-      <p>カテゴリー: <%= recipe.category %></p>
-    </li>
+     <%= render partial: "recipe", locals: { recipe: recipe } %>
   <% end %>
-</ul>
+</div>

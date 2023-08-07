@@ -1,17 +1,26 @@
 class RecipesController < ApplicationController
-  before_action :move_to_index, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index]
   def index
     @recipes = Recipe.all
   end
 
-  private
-  def recipe_params
-    params.require(:recipe).permit(:name, :explain, :category.id)
+  def new
+    @recipe = Recipe.new
   end
 
-  def move_to_index
-    unless user_signed_in?
-      redirect_to action: :index
+  def create
+    @recipe = Recipe.new(recipe_params)
+    if @recipe.save
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
     end
   end
+
+  private
+
+  def recipe_params
+    params.require(:recipe).permit(:name, :explain, :category_id, :content, :image).merge(user_id: current_user.id)
+  end
+
 end
