@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :move_to_index, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index]
   def index
     @recipes = Recipe.all
   end
@@ -9,13 +9,17 @@ class RecipesController < ApplicationController
   end
 
   def create
-    Recipe.create(recipe_params)
-    redirect_to '/'
+    @recipes = Recipe.new(recipe_params)
+    if @recipe.save
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
   def recipe_params
-    params.require(:recipe).permit(:name, :explain, :category.id)
+    params.require(:recipe).permit(:name, :explain, :category_id)
   end
 
   def move_to_index
