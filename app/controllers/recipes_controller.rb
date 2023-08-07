@@ -4,6 +4,15 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
   end
 
+  def new
+    @recipes = Recipe.new
+  end
+
+  def create
+    Recipe.create(recipe_params)
+    redirect_to '/'
+  end
+
   private
   def recipe_params
     params.require(:recipe).permit(:name, :explain, :category.id)
