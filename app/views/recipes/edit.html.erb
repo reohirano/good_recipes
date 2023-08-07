@@ -1,0 +1,24 @@
+<div class="contents row">
+  <div class="container">
+    <h3>編集する</h3>
+    <%= form_with(model: @recipe, local: true) do |form| %>
+    <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= form.file_field :image, id:"recipe-image" %>
+      </div>
+      <%= form.text_field :name, placeholder: "料理名" %>
+      <div class="field">
+        <div class="weight-bold-text">
+          カテゴリー
+          <span class="indispensable"></span>
+        </div>
+        <%= form.collection_select(:category_id, Category.all, :id, :name, {}, { class: "select-box", id: "recipe-category" }) %>
+      </div>
+
+      <%= form.text_area :explain, placeholder: "作り方", rows: "10" %>
+      <%= form.submit "更新" %>
+    <% end %>
+  </div>
+</div>
