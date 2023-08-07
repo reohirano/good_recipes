@@ -5,11 +5,11 @@ class RecipesController < ApplicationController
   end
 
   def new
-    @recipes = Recipe.new
+    @recipe = Recipe.new
   end
 
   def create
-    @recipes = Recipe.new(recipe_params)
+    @recipe = Recipe.new(recipe_params)
     if @recipe.save
       redirect_to root_path
     else
@@ -18,13 +18,9 @@ class RecipesController < ApplicationController
   end
 
   private
+
   def recipe_params
-    params.require(:recipe).permit(:name, :explain, :category_id)
+    params.require(:recipe).permit(:name, :explain, :category_id).merge(user_id: current_user.id)
   end
 
-  def move_to_index
-    unless user_signed_in?
-      redirect_to action: :index
-    end
-  end
 end
