@@ -1,24 +1,27 @@
 <div class="content_post" style="background-image: url(<%= recipe.image %>);">
-      <div class="more">
-        <span><%= image_tag 'arrow_top.png' %></span>
-        <ul class="more_list">
-          <li>
-            <%= link_to '詳細', recipr_path(recipe.id) %>
-          </li>
-          <% if user_signed_in? && current_user.id == recipe.user_id %>
-            <li>
-              <%= link_to '編集', edit_recipe_path(recipe.id) %>
-            </li>
-            <li>
-              <%= link_to '削除', recipi_path(recipe.id), data: { turbo_method: :delete } %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
-      <p><%= recipe.explain %></p>
-      <span class="name">
-        <a href="/users/<%= recipe.user.id %>">
-          <span>投稿者</span><%= recipe.user.nickname %>
-        </a>
-      </span>
-    </div>
+ <div class="recipe_form">
+  <%= image_tag recipe.image.variant(resize: '350x450') if recipe.image.attached? %>
+ </div>
+  <div class="more">
+    <ul class="more_list">
+      <li>
+        <%= link_to '詳細', recipe_path(recipe.id) %>
+      </li>
+      <% if user_signed_in? && current_user.id == recipe.user_id %>
+        <li>
+          <%= link_to '編集', edit_recipe_path(recipe.id) %>
+        </li>
+        <li>
+          <%= link_to '削除', recipe_path(recipe.id), data: { turbo_method: :delete } %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <p><%= recipe.explain %></p>
+  <span class="name">
+    <a href="/users/<%= recipe.user.id %>">
+      <span>投稿者</span><%= recipe.user.nickname %>
+    </a>
+  </span>
+</div>
+

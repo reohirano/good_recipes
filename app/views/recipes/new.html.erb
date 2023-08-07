@@ -1,7 +1,14 @@
 <div class="contents row">
   <div class="container">
     <h3>投稿ページ</h3>
-    <%= form_with(model: @recipe) do |form| %>
+   <%= form_with(model: @recipe) do |form| %>
+    
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= form.file_field :image, id:"recipe-image" %>
+      </div>
       <div class="field">
         <%= form.label :"料理名" %>
         <%= form.text_field :name, placeholder: "" %>
@@ -21,6 +28,6 @@
       </div>
 
       <%= form.submit "投稿する" %>
-    <% end %>
+   <% end %>
   </div>
 </div>
