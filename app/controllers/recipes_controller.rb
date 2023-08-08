@@ -33,6 +33,10 @@ class RecipesController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+    @recipe = Recipe.find(params[:id])
+  end
+
   private
 
   def recipe_params

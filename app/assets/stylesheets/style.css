@@ -1064,3 +1064,41 @@ footer p {
   display: flex;
   justify-content: center;
 }
+
+.explain_zone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  width: 70vw;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+}
+
+body {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.timer {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.content {
+  flex: 1;
+  padding: 10px;
+}

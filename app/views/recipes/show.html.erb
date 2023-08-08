@@ -1,0 +1,40 @@
+<div class="contents row">
+  <div class="content_post" style="background-image: url(<%= @recipe.image %>);">
+   <div class="recipe_form">
+    <span><%= image_tag @recipe.image if @recipe.image.attached? %></span>
+   </div>
+    <div class="more">
+      <ul class="more_list">
+        <li>
+          <%= link_to '編集', edit_recipe_path(@recipe.id) %>
+        </li>
+        <li>
+          <%= link_to '削除', recipe_path(@recipe.id), data: { turbo_method: :delete } %>
+        </li>
+      </ul>
+    </div>
+    <span class="name"><%= @recipe.name %></span>
+  </div>
+  <div class="explain_zone">
+   <%= @recipe.explain %>
+  </div>
+</div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <title>Sidebar with Timer</title>
+</head>
+<body>
+  <div class="sidebar">
+    <div id="timer" class="timer">00:00</div>
+    <button id="startButton">Start</button>
+    <button id="stopButton">Stop</button>
+  </div>
+  <div class="content">
+  </div>
+</body>
+</html>
+  
