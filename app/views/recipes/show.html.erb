@@ -4,6 +4,7 @@
     <span><%= image_tag @recipe.image if @recipe.image.attached? %></span>
    </div>
     <div class="more">
+    <span><%= image_tag 'arrow_top.png' %></span>
       <ul class="more_list">
         <li>
           <%= link_to '編集', edit_recipe_path(@recipe.id) %>

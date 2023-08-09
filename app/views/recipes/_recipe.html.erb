@@ -3,7 +3,9 @@
   <%= image_tag recipe.image.variant(resize: '350x450') if recipe.image.attached? %>
  </div>
   <div class="more">
+  <span><%= image_tag 'arrow_top.png' %></span>
     <ul class="more_list">
+    
       <li>
         <%= link_to '詳細', recipe_path(recipe.id) %>
       </li>

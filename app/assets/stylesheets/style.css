@@ -910,7 +910,7 @@ div.contents.row div.content_post .more ul.more_list {
   width: 80px;
   right: 0;
   font-size: 12px;
-  background-color: #fff;
+  background-color: #faf8f8;
   border: 1px solid #ddd;
   display: none;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
@@ -1088,6 +1088,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   position: fixed;
   top: 0;
   right: 0;
@@ -1113,4 +1114,12 @@ body {
   bottom: 0;
   width: 100%;
   flex-direction: column;
+}
+
+div.contents.row div.content_post div.more span {
+  color: white; /* 文字を白色に変更 */
+  background-color: #57C3E9; /* 水色の背景色 */
+  padding: 5px; /* 内側の余白を追加 */
+  border: 1px solid #57C3E9; /* 枠線を水色で囲む */
+  border-radius: 3px; /* 枠線の角を丸める */
 }
