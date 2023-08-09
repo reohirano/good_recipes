@@ -6,22 +6,22 @@
         <span><%= image_tag recipe.image if recipe.image.attached? %></span>
       </div>
       <div class="more">
-     <span><%= image_tag 'arrow_top.png' %></span>
+     <span><%= image_tag 'V1.png' %></span>
     <ul class="more_list">
       <li>
-        <%= link_to '詳細', recipe_path(@recipe.id) %>
+        <%= link_to '詳細', recipe_path(recipe.id) %>
       </li>
       <% if user_signed_in? && current_user.id == recipe.user_id %>
         <li>
-          <%= link_to '編集', edit_recipe_path(@recipe.id) %>
+          <%= link_to '編集', edit_recipe_path(recipe.id) %>
         </li>
         <li>
-          <%= link_to '削除', recipe_path(@recipe.id), data: { turbo_method: :delete } %>
+          <%= link_to '削除', recipe_path(recipe.id), data: { turbo_method: :delete } %>
         </li>
       <% end %>
     </ul>
   </div>
-      <span class="name"><%= @recipe.name %></span>
+      <span class="name"><%= recipe.name %></span>
     </div>
   <% end %>
 </div>

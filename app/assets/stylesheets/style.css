@@ -1083,7 +1083,7 @@ body {
 
 .sidebar {
   width: 200px;
-  background-color: #f0f0f0;
+  background-color: #a1b2b6;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -1095,7 +1095,8 @@ body {
   bottom: 0;
 }
 
-.timer {
+#timer {
+  margin-top: 300px;
   font-size: 24px;
   margin-bottom: 20px;
 }
@@ -1118,8 +1119,8 @@ body {
 
 div.contents.row div.content_post div.more span {
   color: white; /* 文字を白色に変更 */
-  background-color: #57C3E9; /* 水色の背景色 */
+  background-color: #eff1f1; /* 水色の背景色 */
   padding: 5px; /* 内側の余白を追加 */
-  border: 1px solid #57C3E9; /* 枠線を水色で囲む */
+  border: 1px solid #f4f5f5; /* 枠線を水色で囲む */
   border-radius: 3px; /* 枠線の角を丸める */
 }

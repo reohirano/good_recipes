@@ -3,7 +3,7 @@
   <%= image_tag recipe.image.variant(resize: '350x450') if recipe.image.attached? %>
  </div>
   <div class="more">
-  <span><%= image_tag 'arrow_top.png' %></span>
+  <span><%= image_tag 'V1.png' %></span>
     <ul class="more_list">
     
       <li>
@@ -19,9 +19,10 @@
       <% end %>
     </ul>
   </div>
+  <span class="name"><%= recipe.name %></span>
   <span class="name">
     <a href="/users/<%= recipe.user.id %>">
-      <span>投稿者</span><%= recipe.user.nickname %>
+      <span></span><%= recipe.user.nickname %>
     </a>
   </span>
 </div>
