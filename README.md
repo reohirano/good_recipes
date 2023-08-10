@@ -38,14 +38,13 @@ GOOD RECIPES
 | name               | string     | null: false                   |
 | explain            |  text      | null: false                   |
 | category_id        | integer    | null: false                   |
-
-
+| user               | references | null: false, foreign_key: true|
 #画面遷移図	画面遷移図を添付。
 
 #開発環境	使用した言語・サービスを記載。
 
 #工夫したポイント
-
+シンプルさと詳細画面におけるタイマーの表示
 #改善点
 
 #制作時間
