@@ -1,24 +1,36 @@
-const timer = document.getElementById('timer');
+const timerElement = document.getElementById('timer');
 const startButton = document.getElementById('startButton');
 const stopButton = document.getElementById('stopButton');
+const resetButton = document.getElementById('resetButton');
 
-let interval;
-let time = 0;
+let timerInterval;
+let seconds = 0;
 
-function updateTimer() {
-  time++;
-  const minutes = Math.floor(time / 60);
-  const seconds = time % 60;
-  timer.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+function updateTimerDisplay() {
+  const minutes = Math.floor(seconds / 60);
+  const secondsToShow = seconds % 60;
+  timerElement.textContent = `${minutes}:${secondsToShow.toString().padStart(2, '0')}`;
 }
 
 startButton.addEventListener('click', () => {
-  if (!interval) {
-    interval = setInterval(updateTimer, 1000);
+  if (!timerInterval) {
+    timerInterval = setInterval(() => {
+      seconds++;
+      updateTimerDisplay();
+    }, 1000);
   }
 });
 
 stopButton.addEventListener('click', () => {
-  clearInterval(interval);
-  interval = null;
+  if (timerInterval) {
+    clearInterval(timerInterval);
+    timerInterval = null;
+  }
+});
+
+resetButton.addEventListener('click', () => {
+  clearInterval(timerInterval);
+  timerInterval = null;
+  seconds = 0;
+  updateTimerDisplay();
 });

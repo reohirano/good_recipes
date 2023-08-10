@@ -2,8 +2,10 @@
   <div class="content_post" style="background-image: url(<%= @recipe.image %>);">
    <div class="recipe_form">
     <span><%= image_tag @recipe.image if @recipe.image.attached? %></span>
+    
    </div>
     <div class="more">
+    <span><%= image_tag 'V1.png' %></span>
       <ul class="more_list">
         <li>
           <%= link_to '編集', edit_recipe_path(@recipe.id) %>
@@ -16,25 +18,10 @@
     <span class="name"><%= @recipe.name %></span>
   </div>
   <div class="explain_zone">
-   <%= @recipe.explain %>
+   <%= @recipe.explain.gsub("\n", '<br>').html_safe %>
   </div>
+  <%= render "shared/sideber" %>
 </div>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
-  <title>Sidebar with Timer</title>
-</head>
-<body>
-  <div class="sidebar">
-    <div id="timer" class="timer">00:00</div>
-    <button id="startButton">Start</button>
-    <button id="stopButton">Stop</button>
-  </div>
-  <div class="content">
-  </div>
-</body>
+</div>
 </html>
   

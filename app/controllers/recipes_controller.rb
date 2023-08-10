@@ -1,7 +1,12 @@
 class RecipesController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index, :show]
   def index
-    @recipes = Recipe.all
+    @category_id = params[:category_id]
+    if @category_id.present?
+      @recipes = Recipe.where(category_id: @category_id)
+    else
+      @recipes = Recipe.all
+    end
   end
 
   def new
@@ -18,9 +23,13 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    recipe = Recipe.find(params[:id])
-    recipe.destroy
-    redirect_to root_path
+    @recipe = Recipe.find(params[:id])
+    if @recipe.user_id == current_user.id
+      @recipe.destroy
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
   end
 
   def edit

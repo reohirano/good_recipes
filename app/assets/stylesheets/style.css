@@ -910,7 +910,7 @@ div.contents.row div.content_post .more ul.more_list {
   width: 80px;
   right: 0;
   font-size: 12px;
-  background-color: #fff;
+  background-color: #faf8f8;
   border: 1px solid #ddd;
   display: none;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
@@ -1037,7 +1037,11 @@ form input[type="submit"]:hover {
 footer {
   margin: 30px auto;
   padding: 10px;
-  color: #D8D8D8;
+  color: #98a2a5;
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 footer p {
@@ -1061,44 +1065,151 @@ footer p {
 .recipe_form {
   height: 100%;
   width: 100%;
-  display: flex;
   justify-content: center;
 }
 
 .explain_zone {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh; 
-  width: 70vw;
+  align-items: flex-start;
+  height: 100%; 
+  width: 650px;
   padding: 20px;
   border: 1px solid #ccc;
   background-color: #f0f0f0;
+  overflow: auto;
 }
 
 body {
   display: flex;
+  flex-direction: column;
 }
 
 .sidebar {
   width: 200px;
-  background-color: #f0f0f0;
+  background-color: #a1b2b6;
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
 }
 
-.timer {
-  font-size: 24px;
+.sidebar p {
+  font-size: 20px;
+  color: #000;
+  background-color: #fff;
+  border: 2px solid #007bff;
+  border-radius: 10px; 
+  padding: 10px;
+}
+
+#timer {
+  margin-top: 10px;
   margin-bottom: 20px;
+  font-size: 48px;
+  color: #007bff;
+  background-color: #fff;
+  border: 2px solid #007bff;
+  border-radius: 10px; 
+  padding: 10px;
+}
+
+#startButton {
+  font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 5px;
+}
+
+#stopButton {
+  font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 5px;
+}
+
+#resetButton {
+  font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 5px;
 }
 
 .content {
   flex: 1;
   padding: 10px;
+}
+
+div.contents.row div.content_post div.more span {
+  color: white; /* 文字を白色に変更 */
+  background-color: #eff1f1; /* 水色の背景色 */
+  padding: 5px; /* 内側の余白を追加 */
+  border: 1px solid #f4f5f5; /* 枠線を水色で囲む */
+  border-radius: 3px; /* 枠線の角を丸める */
+}
+
+.left_sidebar {
+  width: 200px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #ced4d4;
+  border: 2px solid #888b8f;
+  float: left;
+}
+
+.recipe-list {
+  float: right;
+  width: 70%;
+  padding: 20px;
+}
+
+.category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-list li {
+  margin-bottom: 5px;
+}
+
+.category-list a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+/* ヘッダー */
+h2 {
+  margin-top: 0;
 }

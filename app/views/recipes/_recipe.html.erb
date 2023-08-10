@@ -1,9 +1,11 @@
 <div class="content_post" style="background-image: url(<%= recipe.image %>);">
  <div class="recipe_form">
-  <%= image_tag recipe.image.variant(resize: '350x450') if recipe.image.attached? %>
+  <%= image_tag recipe.image.variant(resize: '500x550') if recipe.image.attached? %>
  </div>
   <div class="more">
+  <span><%= image_tag 'V1.png' %></span>
     <ul class="more_list">
+    
       <li>
         <%= link_to '詳細', recipe_path(recipe.id) %>
       </li>
@@ -17,9 +19,10 @@
       <% end %>
     </ul>
   </div>
+  <span class="name"><%= recipe.name %></span>
   <span class="name">
     <a href="/users/<%= recipe.user.id %>">
-      <span>投稿者</span><%= recipe.user.nickname %>
+      <span></span><%= recipe.user.nickname %>
     </a>
   </span>
 </div>
