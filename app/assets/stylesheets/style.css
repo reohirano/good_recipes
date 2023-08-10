@@ -1176,7 +1176,6 @@ div.contents.row div.content_post div.more span {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   position: fixed;
   top: 0;
@@ -1185,6 +1184,7 @@ div.contents.row div.content_post div.more span {
   background-color: #ced4d4;
   border: 2px solid #888b8f;
   float: left;
+  text-align: left;
 }
 
 .recipe-list {
