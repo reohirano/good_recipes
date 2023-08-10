@@ -1037,7 +1037,7 @@ form input[type="submit"]:hover {
 footer {
   margin: 30px auto;
   padding: 10px;
-  color: #5fcfeb;
+  color: #98a2a5;
   display: flex;
   flex-direction: column;
   font-size: 30px;
@@ -1100,13 +1100,16 @@ body {
 }
 
 .sidebar p {
-  font-size: 35px;
+  font-size: 20px;
   color: #000;
-  
+  background-color: #fff;
+  border: 2px solid #007bff;
+  border-radius: 10px; 
+  padding: 10px;
 }
 
 #timer {
-  margin-top: 200px;
+  margin-top: 10px;
   margin-bottom: 20px;
   font-size: 48px;
   color: #007bff;
@@ -1126,6 +1129,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-top: 5px;
 }
 
 #stopButton {
@@ -1138,6 +1142,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-top: 5px;
 }
 
 #resetButton {
@@ -1150,6 +1155,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-top: 5px;
 }
 
 .content {
@@ -1163,4 +1169,47 @@ div.contents.row div.content_post div.more span {
   padding: 5px; /* 内側の余白を追加 */
   border: 1px solid #f4f5f5; /* 枠線を水色で囲む */
   border-radius: 3px; /* 枠線の角を丸める */
+}
+
+.left_sidebar {
+  width: 200px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #ced4d4;
+  border: 2px solid #888b8f;
+  float: left;
+}
+
+.recipe-list {
+  float: right;
+  width: 70%;
+  padding: 20px;
+}
+
+.category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-list li {
+  margin-bottom: 5px;
+}
+
+.category-list a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+/* ヘッダー */
+h2 {
+  margin-top: 0;
 }

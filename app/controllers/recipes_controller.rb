@@ -1,7 +1,12 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   def index
-    @recipes = Recipe.all
+    @category_id = params[:category_id]
+    if @category_id.present?
+      @recipes = Recipe.where(category_id: @category_id)
+    else
+      @recipes = Recipe.all
+    end
   end
 
   def new

@@ -1,0 +1,10 @@
+<div class="sidebar">
+  <h3>カテゴリ</h3>
+  <ul class="category-list">
+    <% Category.all.each do |category| %>
+      <% unless category.id == 1 %>
+        <li><%= link_to category.name, recipes_path(category_id: category.id) %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

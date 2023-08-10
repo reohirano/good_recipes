@@ -1,5 +1,14 @@
 <div class="contents row">
+  <div class="left_sidebar">
+    <% Category.all.each do |category| %>
+      <% category.id == 2 %>
+        <li><%= link_to category.name, recipes_path(category_id: category.id) %></li>
+    <% end %>
+  </div>
+  <div class="recipe-list">
+  <h2>投稿一覧</h2>
   <% @recipes.each do |recipe| %>
      <%= render partial: "recipe", locals: { recipe: recipe } %>
   <% end %>
+  </div>
 </div>
