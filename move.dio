@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="ackEgN2FToKQFjNAawVZ" name="ページ1">
-        <mxGraphModel dx="1629" dy="1362" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="413" pageHeight="583" math="0" shadow="0">
+        <mxGraphModel dx="1245" dy="1306" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="413" pageHeight="583" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -185,6 +185,17 @@
                             <mxPoint x="270" y="-40"/>
                             <mxPoint x="-355" y="-40"/>
                         </Array>
+                    </mxGeometry>
+                </mxCell>
+                <UserObject label="ログインまたは新規登録後" treeRoot="1" id="40">
+                    <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=default;" vertex="1" parent="1">
+                        <mxGeometry x="180" y="190" width="120" height="60" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="41" value="" style="shape=link;html=1;" edge="1" parent="1">
+                    <mxGeometry width="100" relative="1" as="geometry">
+                        <mxPoint x="200" y="90" as="sourcePoint"/>
+                        <mxPoint x="200" y="190" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
             </root>

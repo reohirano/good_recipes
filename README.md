@@ -63,7 +63,7 @@ https://good-recipes.onrender.com
 https://i.gyazo.com/e02846fcdd0c3570aca2ff6bef059026.png
 
 #画面遷移図
-
+https://i.gyazo.com/45adfef29c804ba92f935177e9aeb18c.png
 
 #開発環境	使用した言語・サービスを記載。
 mysql　RUBY　HTML　CSS　Javascript　
